@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import AOS from 'aos'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import MapEmbed from './components/MapEmbed'
 import Home from './pages/Home'
 import About from './pages/About'
 import CompanyProfile from './pages/CompanyProfile'
@@ -38,6 +39,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
+      <MapEmbed />
       <Footer />
     </Router>
   )

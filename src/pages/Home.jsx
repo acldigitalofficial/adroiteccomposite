@@ -1,5 +1,13 @@
 import SectionTitle from '../components/SectionTitle'
+import { FiFeather, FiCrosshair, FiShield, FiPackage } from 'react-icons/fi'
 import { heroChips, collageItems, whyCards, materials, mfgCapabilities, processSteps, industries, projects } from '../data/homeData'
+
+const iconMap = {
+  Feather: FiFeather,
+  Crosshair: FiCrosshair,
+  Shield: FiShield,
+  Package: FiPackage,
+}
 
 export default function Home() {
   return (
@@ -52,13 +60,18 @@ export default function Home() {
             description="We combine advanced engineering, premium composite materials, and precision manufacturing to develop lightweight, durable, and high-performance solutions from concept to production."
           />
           <div className="why_grid">
-            {whyCards.map((card, i) => (
-              <div className="why_card" data-aos="fade-up" data-aos-delay={100 * (i + 1)} key={i}>
-                <div className="why_icon-wrap"><i className={card.icon}></i></div>
-                <h3 className="why_title">{card.title}</h3>
-                <p className="why_desc">{card.desc}</p>
-              </div>
-            ))}
+            {whyCards.map((card, i) => {
+              const IconComponent = iconMap[card.icon]
+              return (
+                <div className="why_card" data-aos="fade-up" data-aos-delay={100 * (i + 1)} key={i}>
+                  <div className="why_icon-wrap">
+                    {IconComponent && <IconComponent size={24} />}
+                  </div>
+                  <h3 className="why_title">{card.title}</h3>
+                  <p className="why_desc">{card.desc}</p>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -191,7 +204,7 @@ export default function Home() {
             <p className="cta_desc">Whether you need a custom composite component, a full engineering solution, or prototype-to-production support — we're your trusted partner.</p>
             <div className="cta_btn-group">
               <a className="btn-primary btn-request-demo" href="#contactSection">Request a Quote <i className="icon-arrow_right"></i></a>
-              <a className="btn-secondary" href="#contactSection" style={{ borderColor: 'var(--border-grey)', color: 'var(--navy)' }}>Contact Our Team</a>
+              <a className="btn-secondary" href="#contactSection">Contact Our Team</a>
             </div>
           </div>
         </div>

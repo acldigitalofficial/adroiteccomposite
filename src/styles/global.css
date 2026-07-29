@@ -21,6 +21,10 @@
                 padding: 0;
             }
 
+            html {
+                scroll-behavior: smooth;
+            }
+
             body {
                 font-family: 'Inter', sans-serif;
                 font-size: 16px;
@@ -60,9 +64,10 @@
                 z-index: 10000;
                 top: 0;
                 left: 0;
-                background-color: transparent;
+                background-color: var(--white);
                 transition: var(--transition-base);
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                border-bottom: 1px solid var(--border-grey);
+                box-shadow: var(--shadow-sm);
             }
 
             .header.sticky {
@@ -96,7 +101,7 @@
                 text-decoration: none;
                 font-size: 14px;
                 font-weight: 600;
-                color: rgba(255, 255, 255, 0.85);
+                color: var(--navy);
                 transition: var(--transition-base);
                 position: relative;
             }
@@ -122,7 +127,7 @@
             }
 
             .header_nav-list_item a:hover {
-                color: var(--white);
+                color: var(--burgundy);
             }
 
             .header.sticky .header_nav-list_item a:hover {
@@ -1436,7 +1441,7 @@
                     position: absolute;
                     height: 3px;
                     width: 100%;
-                    background: var(--white);
+                    background: var(--navy);
                     border-radius: 9px;
                     opacity: 1;
                     left: 0;
@@ -1452,7 +1457,21 @@
 
                 .hero_split {
                     grid-template-columns: 1fr;
-                    gap: 40px;
+                    gap: 32px;
+                }
+                .hero {
+                    min-height: auto !important;
+                    padding: 120px 0 60px !important;
+                }
+                .hero_title {
+                    font-size: 36px;
+                }
+                .hero_collage {
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 10px;
+                }
+                .collage_item--tall {
+                    grid-row: span 1;
                 }
                 .service_card {
                     grid-template-columns: 1fr;
@@ -1482,6 +1501,68 @@
                 .hero_title {
                     font-size: 32px;
                 }
+
+                /* --- HERO MOBILE FIX --- */
+                .hero {
+                    min-height: auto !important;
+                    padding: 110px 0 50px !important;
+                }
+                .hero_badge {
+                    font-size: 9px;
+                    padding: 6px 12px;
+                    letter-spacing: 0.5px;
+                }
+                .hero_title {
+                    font-size: 28px !important;
+                    margin-bottom: 16px;
+                }
+                .hero_text {
+                    font-size: 14px;
+                    margin-bottom: 24px;
+                    line-height: 1.6;
+                }
+                .hero_cta-group {
+                    flex-direction: row;
+                    gap: 10px;
+                    margin-bottom: 28px;
+                }
+                .hero_cta-group .btn-primary,
+                .hero_cta-group .btn-secondary {
+                    padding: 12px 20px;
+                    font-size: 13px;
+                }
+                .hero_chips {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 8px;
+                }
+                .hero_chip {
+                    font-size: 12px;
+                    gap: 6px;
+                }
+                /* Collage: compact strip on mobile */
+                .hero_right {
+                    margin-top: 10px;
+                }
+                .hero_collage {
+                    grid-template-columns: repeat(3, 1fr) !important;
+                    gap: 8px;
+                }
+                .collage_item {
+                    aspect-ratio: 1 !important;
+                    border-radius: 10px;
+                }
+                .collage_item--tall {
+                    grid-row: span 1 !important;
+                    aspect-ratio: 1 !important;
+                }
+                .collage_label {
+                    font-size: 9px;
+                    padding: 4px 8px;
+                    bottom: 8px;
+                    left: 8px;
+                }
+
                 .why_grid, .materials_grid, .mfg_grid, .ind_grid, .proj_grid, .footer_grid {
                     grid-template-columns: 1fr;
                 }
@@ -1556,3 +1637,204 @@
             .theme-dark .mfg_card .mfg_desc {
                 color: var(--text-muted) !important;
             }
+
+
+/* ============================================================
+   SENIOR UI/UX DESIGN POLISH
+   ============================================================ */
+
+/* --- Section visual rhythm: alternating backgrounds --- */
+.why { background-color: var(--white); }
+.materials.theme-dark { background-color: var(--light-grey) !important; }
+.mfg.theme-dark { background-color: var(--white) !important; }
+.process { background-color: var(--light-grey); }
+.industries.theme-dark { background-color: var(--white) !important; }
+.projects { background-color: var(--light-grey); }
+.cta { background-color: var(--white) !important; }
+
+/* --- Subtle section top border for visual separation --- */
+.why, .materials, .mfg, .process, .industries, .projects, .cta {
+    border-top: 1px solid var(--border-grey);
+}
+
+/* --- Mobile nav: active class support (React toggles .active) --- */
+.header_nav.active {
+    display: block !important;
+    animation: navSlideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* --- Footer: fix social link colours for light bg --- */
+.footer_social-link {
+    background-color: var(--navy) !important;
+    color: var(--white) !important;
+}
+.footer_social-link:hover {
+    background-color: var(--burgundy) !important;
+    color: var(--navy) !important;
+}
+
+/* --- Card refinements: consistent border-radius & hover glow --- */
+.why_card,
+.material_card,
+.mfg_card,
+.proj_card {
+    border-radius: var(--radius);
+    will-change: transform;
+}
+
+/* --- Why icon colour should be the gold/brand colour properly --- */
+.why_icon-wrap {
+    color: var(--burgundy);
+}
+.why_card:hover .why_icon-wrap {
+    background-color: var(--burgundy);
+    color: var(--navy) !important;
+}
+.why_card:hover .why_icon-wrap svg {
+    color: var(--navy);
+}
+
+/* --- Process dot hover: gold brand, not burgundy --- */
+.process_node:hover .process_dot {
+    border-color: var(--burgundy) !important;
+    background-color: var(--burgundy) !important;
+    color: var(--navy) !important;
+    box-shadow: 0 4px 16px rgba(255, 198, 49, 0.35) !important;
+}
+
+/* --- Image hover zoom: consistent 1.05 scale across all cards --- */
+.material_card:hover .material_img,
+.mfg_card:hover .mfg_img,
+.ind_card:hover .ind_img,
+.proj_card:hover .proj_img,
+.collage_item:hover .collage_img {
+    transform: scale(1.05);
+}
+
+/* --- Button base reset: ensure no outline/border artefacts --- */
+.btn-primary, .btn-secondary, .btn-nav-cta {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.btn-secondary {
+    border: 1px solid var(--border-grey) !important;
+}
+
+/* --- CTA section: add decorative accent dot --- */
+.cta::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,198,49,0.08), transparent 70%);
+    top: -80px;
+    right: -80px;
+    pointer-events: none;
+}
+.cta::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(11,31,58,0.04), transparent 70%);
+    bottom: -60px;
+    left: -60px;
+    pointer-events: none;
+}
+
+/* --- Footer polish: add top accent bar and breathing room --- */
+.footer {
+    border-top: 3px solid var(--burgundy) !important;
+    padding-top: 60px !important;
+}
+.footer_secondary {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 40px;
+}
+
+/* --- Accessibility: visible focus rings --- */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--burgundy);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* --- Selection colour --- */
+::selection {
+    background: rgba(255, 198, 49, 0.25);
+    color: var(--navy);
+}
+
+/* --- Smooth image loading --- */
+img {
+    transition: opacity 0.4s ease;
+}
+img[loading="lazy"] {
+    opacity: 0;
+}
+img[loading="lazy"].loaded,
+img:not([loading="lazy"]) {
+    opacity: 1;
+}
+
+/* --- Consistent link transitions sitewide --- */
+a {
+    transition: color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* --- CTA section secondary button: dark text on light bg --- */
+.cta .btn-secondary {
+    color: var(--navy) !important;
+    border-color: var(--border-grey) !important;
+}
+.cta .btn-secondary:hover {
+    background-color: var(--navy) !important;
+    color: var(--white) !important;
+    border-color: var(--navy) !important;
+}
+
+
+/* --- Map Embed Section (above footer) --- */
+.map-section {
+    background-color: var(--light-grey);
+    padding: 60px 0 0;
+    border-top: 1px solid var(--border-grey);
+}
+.map-section__header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+.map-section__subtitle {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    margin-bottom: 8px;
+}
+.map-section__title {
+    font-family: 'Archivo', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--navy);
+}
+.map-section__wrapper {
+    width: 100%;
+    line-height: 0;
+}
+.map-section__wrapper iframe {
+    width: 100%;
+    height: 400px;
+    display: block;
+}

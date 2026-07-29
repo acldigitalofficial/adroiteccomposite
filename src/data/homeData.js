@@ -15,10 +15,10 @@ export const collageItems = [
 ]
 
 export const whyCards = [
-  { icon: 'icon-maximize', title: 'Lightweight Structures', desc: 'Reduce weight significantly while maintaining or improving superior structural integrity and robustness.' },
-  { icon: 'icon-layers', title: 'Precision Engineering', desc: 'Advanced CAD design, comprehensive Finite Element Analysis (FEA), and layout structural optimization.' },
-  { icon: 'icon-shield', title: 'Advanced Materials', desc: 'Expert application of Carbon Fiber, Glass Fiber, Kevlar reinforcements, hybrid laminates, and epoxy resin systems.' },
-  { icon: 'icon-briefcase', title: 'End-to-End Manufacturing', desc: 'Complete customer support transitioning from initial prototype development to scalable production runs.' },
+  { icon: 'Feather', title: 'Lightweight Structures', desc: 'Reduce weight significantly while maintaining or improving superior structural integrity and robustness.' },
+  { icon: 'Crosshair', title: 'Precision Engineering', desc: 'Advanced CAD design, comprehensive Finite Element Analysis (FEA), and layout structural optimization.' },
+  { icon: 'Shield', title: 'Advanced Materials', desc: 'Expert application of Carbon Fiber, Glass Fiber, Kevlar reinforcements, hybrid laminates, and epoxy resin systems.' },
+  { icon: 'Package', title: 'End-to-End Manufacturing', desc: 'Complete customer support transitioning from initial prototype development to scalable production runs.' },
 ]
 
 export const materials = [
