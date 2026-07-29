@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="100%" height="100%">
+  <path d="M 120 28 C 130 18, 145 18, 155 24 C 165 30, 180 15, 195 10 L 192 14 C 180 18, 170 34, 160 30 C 150 26, 135 34, 120 28" fill="#888a8d"/>
+  <text x="10" y="52" font-family="'Archivo', sans-serif" font-weight="800" font-size="40" fill="#0f5c9e" letter-spacing="1">HOPE</text>
+  <text x="12" y="68" font-family="'Archivo', sans-serif" font-weight="500" font-size="10" fill="#888a8d" font-style="italic">Engineering your dreams</text>
+</svg>
