@@ -65,8 +65,11 @@ export default function Footer() {
               <div className="footer_contact-item">
                 <FiMapPin className="footer_contact-icon" />
                 <div>
-                  Sidco Industrial Estate,<br />
-                  Alathur, Tamil Nadu
+                  Plot No. E 13, Sidco Industrial Estate,<br />
+                  Alathur Village (Phase II),<br />
+                  Thiruporur Taluk,<br />
+                  Chengalpattu District – 603 110,<br />
+                  Tamil Nadu
                 </div>
               </div>
               <div className="footer_contact-item">
@@ -78,7 +81,7 @@ export default function Footer() {
               <div className="footer_contact-item">
                 <FiPhone className="footer_contact-icon" />
                 <div>
-                  <a href="tel:+918015146726">+91 80151 46726</a>
+                  <a href="tel:+919600079490">+91 96000 79490</a>
                 </div>
               </div>
             </div>

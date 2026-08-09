@@ -51,20 +51,24 @@ export default function Contact() {
               <h3 className="contact_info-title" style={{ marginBottom: '24px' }}>Contact Information</h3>
               <div className="contact_info-text" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <div>
-                  <strong style={{ display: 'block', marginBottom: '4px' }}>Corporate Headquarters</strong>
-                  Noida (NCR), Uttar Pradesh, India
-                </div>
-                <div>
-                  <strong style={{ display: 'block', marginBottom: '4px' }}>Manufacturing Facility</strong>
-                  Sidco Industrial Estate, Alathur, Tamil Nadu
+                  <strong style={{ display: 'block', marginBottom: '4px' }}>Address</strong>
+                  Plot No. E 13, Sidco Industrial Estate,<br />
+                  Alathur Village (Phase II),<br />
+                  Thiruporur Taluk,<br />
+                  Chengalpattu District – 603 110,<br />
+                  Tamil Nadu
                 </div>
                 <div>
                   <strong style={{ display: 'block', marginBottom: '4px' }}>Email</strong>
                   <a href="mailto:dr.nabi@adroitecinfo.com" style={{ color: 'var(--burgundy)' }}>dr.nabi@adroitecinfo.com</a>
                 </div>
                 <div>
+                  <strong style={{ display: 'block', marginBottom: '4px' }}>Phone</strong>
+                  <a href="tel:+919600079490" style={{ color: 'var(--burgundy)' }}>+91 96000 79490</a>
+                </div>
+                <div>
                   <strong style={{ display: 'block', marginBottom: '4px' }}>Point of Contact</strong>
-                  Dr S M Nabi — Head, Composite Lab
+                  Dr S Mohamed Nabi — Head, Composite Lab
                 </div>
               </div>
             </div>

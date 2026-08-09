@@ -3,10 +3,10 @@ import { FiCheck, FiAward, FiUsers, FiTarget, FiTrendingUp } from 'react-icons/f
 
 const team = [
   {
-    name: 'Dr. S M Nabi',
-    designation: 'Founder & Head, Composite Lab',
+    name: 'Dr. S Mohamed Nabi',
+    designation: 'Head, Composite Lab',
     dept: 'Leadership',
-    bio: 'B.Sc · B.Tech · M.E · Ph.D (IIT Madras). Pioneering advanced composite engineering in India with 36+ years of expertise.',
+    bio: 'B.Sc · B.Tech · M.E · Ph.D (IIT Madras). Leading advanced composite engineering in India with 36+ years of expertise.',
     img: null,
     initials: 'SN',
     color: '#0B1F3A',

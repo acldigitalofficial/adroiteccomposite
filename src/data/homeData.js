@@ -53,5 +53,5 @@ export const projects = [
   { img: '/img/Marine Composite Doors.png', tag: 'Marine', title: 'A60 Fire-Rated Composite Doors for Naval Vessels' },
   { img: '/img/UAV & Drone Components1.jpg', tag: 'Aerospace', title: 'UAV Airframe & Wing Structures' },
   { img: '/img/Defense Composite Products.jpg', tag: 'Defense', title: 'Ballistic Protection Composite Panels' },
-  { img: '/img/Carbon Fiber Reinforced Polymer (CFRP).jpg', tag: 'Engineering', title: 'Carbon Fiber Structural Components' },
+  { img: '/img/Carbon Fiber Reinforced Polymer (CFRP).jpg', tag: 'Sports', title: 'High-Strength Sport Equipment' },
 ]

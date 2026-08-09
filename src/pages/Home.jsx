@@ -1,6 +1,7 @@
 import SectionTitle from '../components/SectionTitle'
 import BlogSection from '../components/BlogSection'
 import MapEmbed from '../components/MapEmbed'
+import GroupOfCompanies from '../components/GroupOfCompanies'
 import { FiFeather, FiCrosshair, FiShield, FiPackage } from 'react-icons/fi'
 import { heroChips, collageItems, whyCards, materials, mfgCapabilities, processSteps, industries, projects } from '../data/homeData'
 
@@ -102,6 +103,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* GROUP OF COMPANIES */}
+      <GroupOfCompanies />
 
       {/* CORE MATERIALS */}
       <section className="materials theme-dark">
