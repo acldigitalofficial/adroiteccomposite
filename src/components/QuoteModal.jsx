@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react'
 
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyFsK3_vkGhVObGby2Owo3mHhCWMfTsrljqOXMCZoMN_KndE-lPC5NUf4Bcn7gYsdbaEQ/exec'
+
 export default function QuoteModal({ isOpen, onClose }) {
   const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
-  // Close on Escape key
   useEffect(() => {
     const handleKey = (e) => { if (e.key === 'Escape') onClose() }
     if (isOpen) document.addEventListener('keydown', handleKey)
     return () => document.removeEventListener('keydown', handleKey)
   }, [isOpen, onClose])
 
-  // Prevent body scroll when open
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
@@ -19,14 +21,31 @@ export default function QuoteModal({ isOpen, onClose }) {
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setForm({ name: '', email: '', phone: '', company: '', message: '' })
-      onClose()
-    }, 2500)
+    setLoading(true)
+    setError('')
+
+    try {
+      // Google Apps Script requires no-cors for JSONP-style submission
+      await fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      // no-cors means we can't read the response — assume success if no throw
+      setSubmitted(true)
+      setLoading(false)
+      setTimeout(() => {
+        setSubmitted(false)
+        setForm({ name: '', email: '', phone: '', company: '', message: '' })
+        onClose()
+      }, 2800)
+    } catch (err) {
+      setError('Something went wrong. Please try again or email us directly.')
+      setLoading(false)
+    }
   }
 
   if (!isOpen) return null
@@ -42,13 +61,13 @@ export default function QuoteModal({ isOpen, onClose }) {
           <div className="modal-success">
             <div className="modal-success__icon">✓</div>
             <h3>Thank You!</h3>
-            <p>We've received your request. Our team will contact you within 24 hours.</p>
+            <p>We've received your request and saved your details. Our team will contact you within 24–48 hours.</p>
           </div>
         ) : (
           <>
             <div className="modal-header">
               <h2 className="modal-title">Request a Quote</h2>
-              <p className="modal-desc">Fill in your details and our engineering team will get back to you within 24-48 hours.</p>
+              <p className="modal-desc">Fill in your details and our engineering team will get back to you within 24–48 hours.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="modal-form">
@@ -75,12 +94,22 @@ export default function QuoteModal({ isOpen, onClose }) {
               </div>
 
               <div className="modal-form__field">
-                <label htmlFor="quote-message">Project Details / Requirements *</label>
-                <textarea id="quote-message" name="message" value={form.message} onChange={handleChange} rows="4" placeholder="Describe your composite requirements, material type, quantity, timeline..." required></textarea>
+                <label htmlFor="quote-message">Project Details / Requirements <span style={{ fontWeight: 400, textTransform: 'none', color: 'var(--text-muted)' }}>(optional)</span></label>
+                <textarea id="quote-message" name="message" value={form.message} onChange={handleChange} rows="4" placeholder="Describe your composite requirements, material type, quantity, timeline..."></textarea>
               </div>
 
-              <button type="submit" className="modal-form__submit">
-                Submit Request <span>→</span>
+              {error && (
+                <p style={{ color: '#e53e3e', fontSize: '13px', marginTop: '-8px' }}>{error}</p>
+              )}
+
+              <button type="submit" className="modal-form__submit" disabled={loading}>
+                {loading ? (
+                  <>
+                    <span className="modal-spinner"></span> Submitting...
+                  </>
+                ) : (
+                  <>Submit Request <span>→</span></>
+                )}
               </button>
             </form>
           </>

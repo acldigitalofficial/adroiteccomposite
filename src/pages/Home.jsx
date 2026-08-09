@@ -131,30 +131,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MANUFACTURING CAPABILITIES */}
-      <section className="mfg theme-dark">
-        <div className="container">
-          <SectionTitle
-            subtitle="Manufacturing Capabilities"
-            title="State-of-the-Art Composite Manufacturing Processes"
-            description="Our facility at Sidco Industrial Estate, Alathur (Tamil Nadu) is equipped for full-cycle composite manufacturing from lay-up through finishing."
-          />
-          <div className="mfg_grid">
-            {mfgCapabilities.map((cap, i) => (
-              <div className="mfg_card" data-aos="fade-up" data-aos-delay={80 * (i + 1)} key={i}>
-                <div className="mfg_img-wrap">
-                  <img src={cap.img} alt={cap.title} className="mfg_img" />
-                </div>
-                <div className="mfg_content">
-                  <h3 className="mfg_title">{cap.title}</h3>
-                  <p className="mfg_desc">{cap.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* OUR PROCESS */}
       <section className="process">
         <div className="container">
@@ -171,30 +147,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* INDUSTRIES */}
-      <section className="industries theme-dark">
-        <div className="container">
-          <SectionTitle
-            subtitle="Industries We Serve"
-            title="Trusted Across Critical Sectors"
-            description="Our composite solutions serve the most demanding environments — from deep-sea naval operations to high-altitude aerospace missions."
-          />
-          <div className="ind_grid">
-            {industries.map((ind, i) => (
-              <div className="ind_card" data-aos="fade-up" data-aos-delay={100 * (i + 1)} key={i}>
-                <div className="ind_img-wrap">
-                  <img src={ind.img} alt={ind.title} className="ind_img" />
-                </div>
-                <div className="ind_overlay"></div>
-                <div className="ind_content">
-                  <h3 className="ind_title">{ind.title}</h3>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

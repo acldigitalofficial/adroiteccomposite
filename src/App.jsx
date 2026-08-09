@@ -6,9 +6,7 @@ import Footer from './components/Footer'
 import QuoteModal from './components/QuoteModal'
 import Home from './pages/Home'
 import About from './pages/About'
-import CompanyProfile from './pages/CompanyProfile'
 import Services from './pages/Services'
-import Capabilities from './pages/Capabilities'
 import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 import Blogs from './pages/Blogs'
@@ -49,9 +47,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/company-profile" element={<CompanyProfile />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/capabilities" element={<Capabilities />} />
+          <Route path="/capabilities" element={<Services />} />
+          <Route path="/company-profile" element={<Services />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blogs" element={<Blogs />} />
