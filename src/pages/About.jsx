@@ -77,11 +77,11 @@ export default function About() {
           <div className="about-hero__overlay" />
         </div>
         <div className="container about-hero__content">
-          <span className="hero_badge" data-aos="fade-up">About Us</span>
-          <h1 className="about-hero__title" data-aos="fade-up" data-aos-delay="80">
+          <span className="hero_badge" data-aos="fade-up" data-aos-duration="600">About Us</span>
+          <h1 className="about-hero__title" data-aos="fade-up" data-aos-delay="80" data-aos-duration="700">
             Adroitec<br /><span>Composite Lab</span>
           </h1>
-          <p className="about-hero__sub" data-aos="fade-up" data-aos-delay="160">
+          <p className="about-hero__sub" data-aos="fade-up" data-aos-delay="160" data-aos-duration="700">
             Designing and manufacturing high-performance composite structures for marine, aerospace, and defense since 1988.
           </p>
         </div>
@@ -92,7 +92,7 @@ export default function About() {
         <div className="container">
           <div className="about-stats__grid">
             {stats.map((s, i) => (
-              <div className="about-stat" key={i} data-aos="fade-up" data-aos-delay={80 * (i + 1)}>
+              <div className="about-stat" key={i} data-aos="fade-up" data-aos-delay={80 * (i + 1)} data-aos-duration="600">
                 <s.icon className="about-stat__icon" />
                 <span className="about-stat__value">{s.value}</span>
                 <span className="about-stat__label">{s.label}</span>
@@ -106,14 +106,14 @@ export default function About() {
       <section className="about-story">
         <div className="container">
           <div className="about-story__grid">
-            <div data-aos="fade-right">
+            <div data-aos="fade-right" data-aos-duration="700">
               <img
                 src="/img/Custom Composite Fabrication.png"
                 alt="ACL Manufacturing"
                 className="about-story__img"
               />
             </div>
-            <div className="about-story__content" data-aos="fade-left">
+            <div className="about-story__content" data-aos="fade-left" data-aos-duration="700">
               <span className="section_subtitle">Our Story</span>
               <h2 className="about-story__title">36+ Years of Engineering Heritage</h2>
               <p className="about-story__text">
@@ -151,6 +151,7 @@ export default function About() {
                 key={i}
                 data-aos="fade-up"
                 data-aos-delay={80 * ((i % 3) + 1)}
+                data-aos-duration="700"
               >
                 {/* Avatar */}
                 <div className="team-card__avatar-wrap">

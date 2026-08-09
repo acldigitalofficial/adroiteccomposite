@@ -91,7 +91,7 @@ export default function Home() {
             {whyCards.map((card, i) => {
               const IconComponent = iconMap[card.icon]
               return (
-                <div className="why_card" data-aos="fade-up" data-aos-delay={100 * (i + 1)} key={i}>
+                <div className="why_card" data-aos="fade-up" data-aos-delay={100 * (i + 1)} data-aos-duration="700" key={i}>
                   <div className="why_icon-wrap">
                     {IconComponent && <IconComponent size={24} />}
                   </div>
@@ -117,7 +117,7 @@ export default function Home() {
           />
           <div className="materials_grid">
             {materials.map((mat, i) => (
-              <div className="material_card" data-aos="fade-up" data-aos-delay={100 * (i + 1)} key={i}>
+              <div className="material_card" data-aos="fade-up" data-aos-delay={100 * (i + 1)} data-aos-duration="700" key={i}>
                 <div className="material_img-wrap">
                   <img src={mat.img} alt={mat.title} className="material_img" />
                 </div>
@@ -142,10 +142,10 @@ export default function Home() {
             subtitle="Our Process"
             title="From Concept to Delivery — A Seamless Engineering Workflow"
           />
-          <div className="process_timeline-outer" data-aos="fade-up">
+          <div className="process_timeline-outer" data-aos="fade-up" data-aos-duration="700">
             <div className="process_timeline">
               {processSteps.map((step, i) => (
-                <div className="process_node" key={i}>
+                <div className="process_node" key={i} data-aos="fade-up" data-aos-delay={80 * (i + 1)} data-aos-duration="600">
                   <div className="process_dot">{String(i + 1).padStart(2, '0')}</div>
                   <div className="process_name">{step}</div>
                 </div>
@@ -165,7 +165,7 @@ export default function Home() {
           />
           <div className="proj_grid">
             {projects.map((proj, i) => (
-              <div className="proj_card" data-aos="fade-up" data-aos-delay={100 * (i + 1)} key={i}>
+              <div className="proj_card" data-aos="fade-up" data-aos-delay={100 * (i + 1)} data-aos-duration="700" key={i}>
                 <div className="proj_img-wrap">
                   <img src={proj.img} alt={proj.title} className="proj_img" />
                 </div>

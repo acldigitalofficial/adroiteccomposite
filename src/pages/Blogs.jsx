@@ -63,9 +63,9 @@ export default function Blogs() {
       {/* Page Banner */}
       <section className="blogs-hero">
         <div className="container">
-          <span className="hero_badge">ACL Blog</span>
-          <h1 className="blogs-hero__title">Our Latest Articles</h1>
-          <p className="blogs-hero__desc">
+          <span className="hero_badge" data-aos="fade-up" data-aos-duration="600">ACL Blog</span>
+          <h1 className="blogs-hero__title" data-aos="fade-up" data-aos-delay="80" data-aos-duration="700">Our Latest Articles</h1>
+          <p className="blogs-hero__desc" data-aos="fade-up" data-aos-delay="160" data-aos-duration="700">
             Technical insights, project highlights, and composite engineering news from Adroitec Composite Lab.
           </p>
         </div>
@@ -77,7 +77,7 @@ export default function Blogs() {
 
           {/* Label filters */}
           {!loading && !error && allLabels.length > 1 && (
-            <div className="blogs-filters">
+            <div className="blogs-filters" data-aos="fade-up" data-aos-duration="600">
               {allLabels.map(label => (
                 <button
                   key={label}
@@ -126,7 +126,7 @@ export default function Blogs() {
               {/* Grid */}
               <div className="blog-section__grid blogs-page__grid">
                 {pagePosts.map((post, i) => (
-                  <BlogCard key={post.postId || i} post={post} delay={0} />
+                  <BlogCard key={post.postId || i} post={post} delay={80 * ((i % 3) + 1)} />
                 ))}
               </div>
 

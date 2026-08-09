@@ -6,9 +6,9 @@ export default function Projects() {
     <>
       <section className="hero" style={{ minHeight: '50vh', padding: '160px 0 80px' }}>
         <div className="container" style={{ textAlign: 'center' }}>
-          <span className="hero_badge">Our Work</span>
-          <h1 className="hero_title" style={{ fontSize: '42px' }}>Projects</h1>
-          <p className="hero_text" style={{ maxWidth: '700px', margin: '0 auto' }}>A selection of high-impact composite engineering projects delivered across marine, aerospace, and defense sectors.</p>
+          <span className="hero_badge" data-aos="fade-up" data-aos-duration="600">Our Work</span>
+          <h1 className="hero_title" data-aos="fade-up" data-aos-delay="80" data-aos-duration="700" style={{ fontSize: '42px' }}>Projects</h1>
+          <p className="hero_text" data-aos="fade-up" data-aos-delay="160" data-aos-duration="700" style={{ maxWidth: '700px', margin: '0 auto' }}>A selection of high-impact composite engineering projects delivered across marine, aerospace, and defense sectors.</p>
         </div>
       </section>
 
@@ -17,7 +17,7 @@ export default function Projects() {
           <SectionTitle subtitle="Featured Projects" title="Engineering Excellence in Action" />
           <div className="proj_grid">
             {projects.map((proj, i) => (
-              <div className="proj_card" data-aos="fade-up" data-aos-delay={100 * (i + 1)} key={i}>
+              <div className="proj_card" data-aos="fade-up" data-aos-delay={100 * (i + 1)} data-aos-duration="700" key={i}>
                 <div className="proj_img-wrap">
                   <img src={proj.img} alt={proj.title} className="proj_img" />
                 </div>

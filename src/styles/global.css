@@ -3181,3 +3181,180 @@ a {
     .org-branch { max-width: 200px; }
     .org-node--parent { max-width: 480px; }
 }
+
+/* ============================================================
+   ENHANCED ANIMATIONS & TRANSITIONS
+   ============================================================ */
+
+/* Page transition fade-in */
+main {
+    animation: pageFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes pageFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Shimmer loading skeleton */
+@keyframes shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position:  200% 0; }
+}
+
+/* Floating animation for hero stats card */
+@keyframes floatY {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-8px); }
+}
+.hero__stats-card {
+    animation: floatY 4s ease-in-out infinite;
+}
+@media (max-width: 900px) {
+    .hero__stats-card { animation: none; }
+}
+
+/* Gradient border shimmer on section titles */
+.section_title {
+    position: relative;
+}
+.section_title::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    background: linear-gradient(90deg, #FFC631, #0DA574);
+    border-radius: 2px;
+    margin: 12px auto 0;
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.section_title-wrap:hover .section_title::after {
+    width: 80px;
+}
+
+/* Card hover lift — unified */
+.why_card,
+.material_card,
+.mfg_card,
+.proj_card,
+.blog-card,
+.team-card,
+.service_card,
+.org-node {
+    transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.38s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Nav link underline slide */
+.header_nav-list_item a::after {
+    transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Button press feedback */
+.hero__btn-primary:active,
+.hero__btn-secondary:active,
+.btn-primary:active,
+.btn-nav-cta:active,
+.modal-form__submit:active {
+    transform: scale(0.97) !important;
+}
+
+/* Process dot pulse on hover */
+.process_node:hover .process_dot::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 2px solid var(--burgundy);
+    animation: dotPulse 0.6s ease-out forwards;
+}
+@keyframes dotPulse {
+    0%   { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.6); }
+}
+
+/* Stats counter number roll-in */
+.hero__stat-value {
+    display: inline-block;
+    animation: countRoll 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@keyframes countRoll {
+    from { transform: translateY(20px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* About stats bar number animation */
+.about-stat__value {
+    display: inline-block;
+    animation: countRoll 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: 0.2s;
+}
+
+/* Footer link hover arrow slide */
+.footer_link-item a {
+    position: relative;
+    padding-left: 0;
+    transition: padding-left 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                color 0.3s !important;
+}
+.footer_link-item a::before {
+    content: '→';
+    position: absolute;
+    left: -16px;
+    opacity: 0;
+    transition: opacity 0.3s, left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.footer_link-item a:hover {
+    padding-left: 18px !important;
+}
+.footer_link-item a:hover::before {
+    opacity: 1;
+    left: 0;
+}
+
+/* Org node connector line draw animation */
+.org-stem,
+.org-branch__drop {
+    animation: lineGrow 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    transform-origin: top;
+}
+@keyframes lineGrow {
+    from { transform: scaleY(0); }
+    to   { transform: scaleY(1); }
+}
+
+/* Service card image zoom on hover */
+.service_img-wrap {
+    overflow: hidden;
+}
+.service_img {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.service_card:hover .service_img {
+    transform: scale(1.06) !important;
+}
+
+/* Blog card image */
+.blog-card__img {
+    transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.blog-card:hover .blog-card__img {
+    transform: scale(1.06) !important;
+}
+
+/* Scroll-to-top smooth reveal */
+.modal-overlay {
+    animation: modalBgIn 0.3s ease !important;
+}
+@keyframes modalBgIn {
+    from { backdrop-filter: blur(0px); background: rgba(11,31,58,0); }
+    to   { backdrop-filter: blur(6px); background: rgba(11,31,58,0.6); }
+}
+
+/* Map section slide up */
+.map-section {
+    transition: opacity 0.5s ease;
+}
+.map-section__wrapper iframe {
+    transition: opacity 0.4s ease;
+}

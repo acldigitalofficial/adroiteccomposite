@@ -25,7 +25,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer_grid">
           {/* Brand */}
-          <div className="footer_brand-col">
+          <div className="footer_brand-col" data-aos="fade-up" data-aos-delay="100" data-aos-duration="600">
             <div className="footer_brand">
               <img src="/img/logo.png" alt="Adroitec Composite Lab" />
             </div>
@@ -35,7 +35,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="600">
             <h4 className="footer_title">Quick Links</h4>
             <ul className="footer_links">
               {quickLinks.map((link) => (
@@ -47,7 +47,7 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div>
+          <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="600">
             <h4 className="footer_title">Our Services</h4>
             <ul className="footer_links">
               {serviceLinks.map((s) => (
@@ -59,7 +59,7 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
+          <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="600">
             <h4 className="footer_title">Contact Us</h4>
             <div className="footer_contact-info">
               <div className="footer_contact-item">

@@ -15,16 +15,16 @@ export default function Contact() {
     <>
       <section className="hero" style={{ minHeight: '50vh', padding: '160px 0 80px' }}>
         <div className="container" style={{ textAlign: 'center' }}>
-          <span className="hero_badge">Get In Touch</span>
-          <h1 className="hero_title" style={{ fontSize: '42px' }}>Contact Us</h1>
-          <p className="hero_text" style={{ maxWidth: '700px', margin: '0 auto' }}>Our technical sales and engineering teams are ready to support your custom composite projects.</p>
+          <span className="hero_badge" data-aos="fade-up" data-aos-duration="600">Get In Touch</span>
+          <h1 className="hero_title" data-aos="fade-up" data-aos-delay="80" data-aos-duration="700" style={{ fontSize: '42px' }}>Contact Us</h1>
+          <p className="hero_text" data-aos="fade-up" data-aos-delay="160" data-aos-duration="700" style={{ maxWidth: '700px', margin: '0 auto' }}>Our technical sales and engineering teams are ready to support your custom composite projects.</p>
         </div>
       </section>
 
       <section className="contact theme-dark" id="contactSection">
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px' }}>
-            <div className="contact_form-wrapper" data-aos="fade-right">
+            <div className="contact_form-wrapper" data-aos="fade-right" data-aos-duration="700">
               <h3 className="contact_form-title" style={{ marginBottom: '24px' }}>Send Us a Message</h3>
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <div>
@@ -47,7 +47,7 @@ export default function Contact() {
               </form>
             </div>
 
-            <div className="contact_info-card" data-aos="fade-left" style={{ padding: '36px' }}>
+            <div className="contact_info-card" data-aos="fade-left" data-aos-duration="700" style={{ padding: '36px' }}>
               <h3 className="contact_info-title" style={{ marginBottom: '24px' }}>Contact Information</h3>
               <div className="contact_info-text" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <div>

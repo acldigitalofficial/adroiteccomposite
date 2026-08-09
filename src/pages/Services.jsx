@@ -47,11 +47,11 @@ export default function Services() {
           <div className="about-hero__overlay" />
         </div>
         <div className="container about-hero__content">
-          <span className="hero_badge" data-aos="fade-up">Products &amp; Services</span>
-          <h1 className="about-hero__title" data-aos="fade-up" data-aos-delay="80">
+          <span className="hero_badge" data-aos="fade-up" data-aos-duration="600">Products &amp; Services</span>
+          <h1 className="about-hero__title" data-aos="fade-up" data-aos-delay="80" data-aos-duration="700">
             Precision-Engineered<br /><span>Composite Solutions</span>
           </h1>
-          <p className="about-hero__sub" data-aos="fade-up" data-aos-delay="160">
+          <p className="about-hero__sub" data-aos="fade-up" data-aos-delay="160" data-aos-duration="700">
             End-to-end composite engineering from design to delivery — marine, aerospace, and defense.
           </p>
         </div>
@@ -70,6 +70,8 @@ export default function Services() {
               <div
                 className={`service_card${svc.reverse ? ' service_card--reverse' : ''}`}
                 data-aos="fade-up"
+                data-aos-delay={80 * (i + 1)}
+                data-aos-duration="700"
                 key={i}
               >
                 <div className="service_img-wrap">
