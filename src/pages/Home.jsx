@@ -1,4 +1,6 @@
 import SectionTitle from '../components/SectionTitle'
+import BlogSection from '../components/BlogSection'
+import MapEmbed from '../components/MapEmbed'
 import { FiFeather, FiCrosshair, FiShield, FiPackage } from 'react-icons/fi'
 import { heroChips, collageItems, whyCards, materials, mfgCapabilities, processSteps, industries, projects } from '../data/homeData'
 
@@ -14,40 +16,65 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="hero">
-        <div className="container">
-          <div className="hero_split">
-            <div className="hero_left" data-aos="fade-right" data-aos-duration="1000">
-              <span className="hero_badge">Advanced Composite Engineering | Marine • Aerospace • Defense</span>
-              <h1 className="hero_title">
-                Advanced Composite <span>Solutions for Tomorrow's</span> Engineering Challenges
-              </h1>
-              <p className="hero_text">
-                Adroitec Composite Lab (ACL) designs, develops, and manufactures lightweight, high-strength composite structures using Glass Fiber (GFRP), Carbon Fiber (CFRP), Kevlar Reinforced Composites, and Advanced Epoxy Systems.
-              </p>
-              <div className="hero_cta-group">
-                <a className="btn-primary btn-request-demo" href="#contactSection">
-                  Request a Quote <i className="icon-arrow_right"></i>
-                </a>
-                <a className="btn-secondary" href="#contactSection">Contact Our Experts</a>
-              </div>
-              <div className="hero_chips">
-                {heroChips.map((chip) => (
-                  <div className="hero_chip" key={chip}><i className="icon-check"></i> {chip}</div>
-                ))}
-              </div>
-            </div>
+        {/* Full-bleed background image */}
+        <div className="hero__bg">
+          <img
+            src="/img/Carbon Fiber Reinforced Polymer (CFRP).jpg"
+            alt="Advanced Composite Engineering"
+            className="hero__bg-img"
+          />
+          <div className="hero__bg-overlay" />
+        </div>
 
-            <div className="hero_right" data-aos="fade-left" data-aos-duration="1000">
-              <div className="hero_collage">
-                {collageItems.map((item, i) => (
-                  <div className={`collage_item${item.tall ? ' collage_item--tall' : ''}`} key={i}>
-                    <img src={item.img} alt={item.label} className="collage_img" />
-                    <span className="collage_label">{item.label}</span>
-                  </div>
-                ))}
-              </div>
+        <div className="container hero__container">
+
+          {/* Left: badge + heading + desc + CTAs */}
+          <div className="hero__left" data-aos="fade-up" data-aos-duration="900">
+
+            <span className="hero_badge">
+              Marine &nbsp;·&nbsp; Aerospace &nbsp;·&nbsp; Defense
+            </span>
+
+            <h1 className="hero__heading">
+              Precision<br />
+              Composite<br />
+              <span>Solutions</span>
+            </h1>
+
+            <p className="hero__sub">
+              Designing and manufacturing lightweight, high-strength composite structures using Glass Fiber, Carbon Fiber, Kevlar, and Advanced Epoxy Systems.
+            </p>
+
+            <div className="hero__actions">
+              <a className="hero__btn-primary btn-request-demo" href="#contactSection">
+                Request a Quote
+              </a>
+              <a className="hero__btn-secondary" href="/about">
+                Learn More
+              </a>
             </div>
           </div>
+
+          {/* Stats card */}
+          <div className="hero__stats-card" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+            <div className="hero__stat">
+              <span className="hero__stat-value">100+</span>
+              <span className="hero__stat-label">Projects Delivered</span>
+            </div>
+            <div className="hero__stat">
+              <span className="hero__stat-value">100%</span>
+              <span className="hero__stat-label">Quality Rate</span>
+            </div>
+            <div className="hero__stat">
+              <span className="hero__stat-value">50+</span>
+              <span className="hero__stat-label">Engineers</span>
+            </div>
+            <div className="hero__stat">
+              <span className="hero__stat-value">36+</span>
+              <span className="hero__stat-label">Yrs Heritage</span>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -195,6 +222,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* BLOG */}
+      <BlogSection />
+
+      {/* MAP */}
+      <MapEmbed />
 
       {/* CTA */}
       <section className="cta">

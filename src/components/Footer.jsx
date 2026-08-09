@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { FiMapPin, FiMail, FiPhone } from 'react-icons/fi'
 
 const quickLinks = [
   { path: '/', label: 'Home' },
@@ -62,23 +63,22 @@ export default function Footer() {
             <h4 className="footer_title">Contact Us</h4>
             <div className="footer_contact-info">
               <div className="footer_contact-item">
-                <i className="icon-location"></i>
+                <FiMapPin className="footer_contact-icon" />
                 <div>
-                  <strong>Corporate HQ:</strong><br />
-                  Noida (NCR), Uttar Pradesh
+                  Sidco Industrial Estate,<br />
+                  Alathur, Tamil Nadu
                 </div>
               </div>
               <div className="footer_contact-item">
-                <i className="icon-location"></i>
-                <div>
-                  <strong>Manufacturing:</strong><br />
-                  Sidco Industrial Estate, Alathur, Tamil Nadu
-                </div>
-              </div>
-              <div className="footer_contact-item">
-                <i className="icon-envelope"></i>
+                <FiMail className="footer_contact-icon" />
                 <div>
                   <a href="mailto:dr.nabi@adroitecinfo.com">dr.nabi@adroitecinfo.com</a>
+                </div>
+              </div>
+              <div className="footer_contact-item">
+                <FiPhone className="footer_contact-icon" />
+                <div>
+                  <a href="tel:+918015146726">+91 80151 46726</a>
                 </div>
               </div>
             </div>
